@@ -65,3 +65,30 @@ WHERE geschlecht = "w";
 ## Die Anzahl der Fakultäten zählen
 SELECT COUNT (*) AS Anzahl_Fakultaeten
 FROM fakultaet; 
+
+3. Wie viele Projekte gibt es pro Fakultät?
+4. Wie viele Studierende betreut jeder Professor?
+Dustin Pötzsch
+15:00
+SELECT geschlecht, COUNT(*) AS anzahl
+FROM Student
+GROUP BY geschlecht;
+Marcus Vix
+15:00
+2. Alle Projekttitel, die von weiblichen Studierenden durchgeführt werden
+Dustin Pötzsch
+15:22
+SELECT fakultaet.name AS fakultaet_name, COUNT(projekt.id) AS projektanzahl
+FROM projekt
+INNER JOIN Student ON projekt.student_id = Student.id
+INNER JOIN Professor ON Student.professor_id = Professor.id
+INNER JOIN fakultaet ON Professor.fakultaet_id = fakultaet.id
+GROUP BY fakultaet.name;
+Marcus Vix
+17:22
+SELECT professor.name, COUNT(student.id) AS anzahl_studis
+FROM professor
+JOIN student ON professor.id = student.professor_id
+
+GROUP BY professor.name;
+Zeige alle Studierenden der Fakultät "Informatik", die an mehr als einem Projekt beteiligt sind.
