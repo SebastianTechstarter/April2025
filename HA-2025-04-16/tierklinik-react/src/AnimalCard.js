@@ -1,7 +1,10 @@
 import React from 'react'
 
 const animals = [
-    {name: 'Wanda', age: 3, type: 'Hund', breed: 'Labrador', illness: 'Zahnschmerzen'}
+    {name: 'Wanda', age: 3, type: 'Hund', breed: 'Labrador', illness: 'Zahnschmerzen'},
+    {name: 'Cosmo', age: 8, type: 'Hund', breed: 'Mix', illness: 'Krebs'},
+    {name: 'Moritz', age: 12, type: 'Katze', breed: 'Hauskatze', illness: 'Nierenversagen'},
+    {name: 'Tjapka', age: 9, type: 'Hund', breed: 'Dackel', illness: 'Wirbelbruch'}
 ];
 
 function AnimalCard({name, age, type, breed, illness}) {
